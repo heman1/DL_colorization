@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Colorization of images</title>
+    <link href="./assets/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <h1><span style="color:red;">C</span><span style="color:blue;">o</span><span style="color:green;">l</span><span style="color:rgb(240, 236, 0);">o</span><span style="color:red;">r</span><span style="color:violet;">i</span><span style="color:orange">z</span><span style="color:blue;">a</span><span style="color:goldenrod;">t</span><span style="color:skyblue">i</span><span style="color:rgb(240, 236, 0);">o</span><span style="color:green;">n</span> of Grayscale Images</h1>
+  <div class="mastHead">
+    <progress value="0" max="100" id="uploader"> 0%</progress>
+
+    <div class="upload-btn-wrapper">
+      <button class="filebtn">Upload a file</button>
+      <input type="file" name="myfile" id="fileButton" />
+    </div>
+  </div>
+
+  <p id="result"></p>
+   
+  <div class="img_result">
+      <div class="one">
+        <img src="" id="output_image1">
+      </div>
+      <div class="two">
+        <img src="" id="output_image2">
+      </div>
+  </div>
+
+  <div id="container">
+  <div class="footer">
+    <p>Made with JS by Himanshu Negi</p>
+  </div>
+  </div>
+
+
+    
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#config-web-app -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-storage.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
