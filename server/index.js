@@ -34,13 +34,9 @@ app.post("/", function(req, res) {       //file upload
                         "image": inputURL
                     };
                     console.log("sending request to model with data url: "+ input);
-<<<<<<< HEAD
+
                     algorithmia.client("xxxxxxxxxxxxxxxxxxxx")
                     .algo("deeplearning/ColorfulImageColorization/1.1.13")
-=======
-                    algorithmia.client("xxxxxxxxxxxxxxxxxxxx")
-                    .algo("deeplearning/ColorfulImageColorization/1.1.13") // timeout is optional
->>>>>>> 92368bd08e82e66bda94515302a7623118c98160
                     .pipe(input)
                     .then(function(response) {
                         console.log(response.get());
