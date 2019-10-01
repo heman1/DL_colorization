@@ -35,14 +35,17 @@ app.post("/", function(req, res) {       //file upload
                     };
                     console.log("sending request to model with data url: "+ input);
                     algorithmia.client("simnh0qxcJWRZ/tat40FYEYV+111")
-                    .algo("deeplearning/ColorfulImageColorization/1.1.13") // timeout is optional
+                    .algo("deeplearning/ColorfulImageColorization/1.1.13")
                     .pipe(input)
                     .then(function(response) {
                         console.log(response.get());
-                        // var colored_image = client.dir(response.get());  // Get the file's contents
+                        // var colored_image = client.dir("data://.algo/deeplearning/ColorfulImageColorization/temp");  
+                        // console.log("Getting the file first: "+ colored_image+ " with filename: "+filename);
                         // colored_image.file(filename).get(function(err, data) {
+                        //     if(err) console.error(err) ;
                         //     console.log("Read " + data.length + " bytes");
-                        //     fs.writeFileSync("./uploads/colored/"+filename, data);
+                        //     fs.writeFileSync("/uploads/colored/"+filename, data);
+                            
                         // });
                         res.end(JSON.stringify(response.get()));
                     }); 
