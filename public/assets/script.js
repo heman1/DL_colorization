@@ -1,12 +1,12 @@
 //Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyAZwMQTQYCeYv1tnOgOIsU4o3K9fpMSnkw",
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     authDomain: "colorization-deeplearning.firebaseapp.com",
     databaseURL: "https://colorization-deeplearning.firebaseio.com",
     projectId: "colorization-deeplearning",
     storageBucket: "colorization-deeplearning.appspot.com",
-    messagingSenderId: "540225487970",
-    appId: "1:540225487970:web:7e0bbc3fe1bb5f04"
+    messagingSenderId: "xxxxxxxxxxxxxxxx",
+    appId: "xxxxxxxxxxxxxxxxxxxxxxxxx"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -63,27 +63,3 @@ function getUrl(storageRef) {
       return url;
   })
 }
-
-// function callAlgorithmia(url) {
-//       console.log("make call to server with a post method");
-//       var img = document.getElementById('output_image2');
-//       img.src = "images/loadgif1.gif";
-//       var input = {
-//         "image": "data://himanshu_negi/gray_scale/old-man-hat-poor-smoking-preview.jpg"
-//       };
-//       fetch("http://localhost:9211", {
-//         method: 'POST',
-//         headers:{
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(input)
-//       }).then( function(res) {
-//           return res.json();
-//       }).then( function(myjson) {
-//           console.log(myjson);
-//           document.getElementById("result").innerHTML = myjson.output;
-//           var final = myjson.output;
-//           final = 'https://algorithmia.com/v1/data/' + final.slice(7, final.length);
-//           img.src= final;
-//       });
-//   }

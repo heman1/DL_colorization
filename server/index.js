@@ -6,7 +6,7 @@ var app = express();
 var upload = require('express-fileupload');
 var bodyParser = require('body-parser');
 
-var client = algorithmia.client("simnh0qxcJWRZ/tat40FYEYV+111");
+var client = algorithmia.client("xxxxxxxxxxxxxxxxxxxxxxxxx");
 
 app.listen(9211, function() {
     console.log('server running on localhost:9211');
@@ -34,8 +34,13 @@ app.post("/", function(req, res) {       //file upload
                         "image": inputURL
                     };
                     console.log("sending request to model with data url: "+ input);
-                    algorithmia.client("simnh0qxcJWRZ/tat40FYEYV+111")
+<<<<<<< HEAD
+                    algorithmia.client("xxxxxxxxxxxxxxxxxxxx")
                     .algo("deeplearning/ColorfulImageColorization/1.1.13")
+=======
+                    algorithmia.client("xxxxxxxxxxxxxxxxxxxx")
+                    .algo("deeplearning/ColorfulImageColorization/1.1.13") // timeout is optional
+>>>>>>> 92368bd08e82e66bda94515302a7623118c98160
                     .pipe(input)
                     .then(function(response) {
                         console.log(response.get());
