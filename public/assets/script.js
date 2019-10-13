@@ -54,6 +54,11 @@ btn.addEventListener('change', function(e) {   //listen for file selection
   });
 
 });
+var d_btn = document.getElementsByClassName('download-btn')[0];
+var d_link = document.getElementById('d-link');
+d_btn.style.display = "block";
+d_link.setAttribute('href', final);
+
 
 function getUrl(storageRef) {
   var img = document.getElementById('output_image1');

@@ -117,4 +117,22 @@ img {
     color: #fff;
     padding: 8px 0;
 }
+.download-btn {
+    display: none;
+    position: absolute;
+    bottom: -100px;
+    left: 45%;
+    width: 100px;
+    padding: 15px 25px 10px 25px;
+    border-radius: 6px;
+    background: #03a9f4;
+}
+
+.download-btn a {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-family: sans-serif;
+}
 
