@@ -17,17 +17,17 @@ app.use(upload());
 
 app.use(express.static('../public')); 
 
-app.post("/", function(req, res) {       //file upload
+app.post("/", (req, res) => {       //file upload
     if(req.files) {                      //if request has files
         var ufile = req.files.file,
         filename = ufile.name;
         console.log(ufile);
-        ufile.mv("./uploads/" + filename, function(err) {
+        ufile.mv("./uploads/" + filename, (err) => {
             if(err) {
                 console.log("Error: "+ err);
                 res.send("error in uploading file to node server");
             } else {
-                uploadToDB(filename).then( function(inputURL) {
+                uploadToDB(filename).then( (inputURL)=> {
                     //CALLING ALGORITHMIA MODEL
                     console.log(inputURL);
                     var input = {
@@ -35,22 +35,17 @@ app.post("/", function(req, res) {       //file upload
                     };
                     console.log("sending request to model with data url: "+ input);
 
+                    //get response from algorithmia
                     algorithmia.client("xxxxxxxxxxxxxxxxxxxx")
                     .algo("deeplearning/ColorfulImageColorization/1.1.13")
                     .pipe(input)
                     .then(function(response) {
                         console.log(response.get());
-                        // var colored_image = client.dir("data://.algo/deeplearning/ColorfulImageColorization/temp");  
-                        // console.log("Getting the file first: "+ colored_image+ " with filename: "+filename);
-                        // colored_image.file(filename).get(function(err, data) {
-                        //     if(err) console.error(err) ;
-                        //     console.log("Read " + data.length + " bytes");
-                        //     fs.writeFileSync("/uploads/colored/"+filename, data);
-                            
-                        // });
                         res.end(JSON.stringify(response.get()));
-                    }); 
-                }) 
+                    }).catch( e=> console.log("error in connecting to algorithmia "+e)); 
+
+                    return;
+                }).catch(e=> console.log("error in uploading to firebase "+e)) 
             }
         });
 
